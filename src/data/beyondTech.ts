@@ -19,7 +19,7 @@ export const beyondTechGallery: VisualStoryItem[] = [
       "Hosting live proceedings before the Minister of Education and state polytechnic directors across Indonesia.",
     tag: "National Stage",
     imagePlaceholderLabel: "[REPLACE REQUIRED — MC STAGE PHOTO AT FDPNI NATIONAL WORKING MEETING]",
-    expectedPath: "/images/leadership/mc-fdpni.jpg",
+    expectedPath: "/images/leadership/mc-fdpni.JPG",
   },
   {
     id: "ambassador-delegation",
@@ -30,7 +30,7 @@ export const beyondTechGallery: VisualStoryItem[] = [
       "Representing Politeknik Negeri Jakarta during international bilateral academic cooperation ceremonies.",
     tag: "Global Partnership",
     imagePlaceholderLabel: "[REPLACE REQUIRED — CAMPUS AMBASSADOR DIPLOMATIC DELEGATION PHOTO]",
-    expectedPath: "/images/leadership/ambassador-delegation.jpg",
+    expectedPath: "/images/leadership/ambassador-delegation.JPG",
   },
   {
     id: "grand-final-protocol",
