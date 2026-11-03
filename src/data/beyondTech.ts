@@ -19,7 +19,7 @@ export const beyondTechGallery: VisualStoryItem[] = [
       "Hosting live proceedings before the Minister of Education and state polytechnic directors across Indonesia.",
     tag: "National Stage",
     imagePlaceholderLabel: "[REPLACE REQUIRED — MC STAGE PHOTO AT FDPNI NATIONAL WORKING MEETING]",
-    expectedPath: "/public/images/leadership/mc-fdpni.jpg",
+    expectedPath: "/images/leadership/mc-fdpni.jpg",
   },
   {
     id: "ambassador-delegation",
@@ -30,7 +30,7 @@ export const beyondTechGallery: VisualStoryItem[] = [
       "Representing Politeknik Negeri Jakarta during international bilateral academic cooperation ceremonies.",
     tag: "Global Partnership",
     imagePlaceholderLabel: "[REPLACE REQUIRED — CAMPUS AMBASSADOR DIPLOMATIC DELEGATION PHOTO]",
-    expectedPath: "/public/images/leadership/ambassador-delegation.jpg",
+    expectedPath: "/images/leadership/ambassador-delegation.jpg",
   },
   {
     id: "grand-final-protocol",
@@ -41,7 +41,7 @@ export const beyondTechGallery: VisualStoryItem[] = [
       "Managing live stage cues and ceremonial VIP protocol for keynote remarks by Minister Prof. Brian Yuliarto.",
     tag: "VIP Protocol",
     imagePlaceholderLabel: "[REPLACE REQUIRED — GRAND FINAL DUTA PNJ CEREMONY STAGE PHOTO]",
-    expectedPath: "/public/images/leadership/grand-final-stage.png",
+    expectedPath: "/images/leadership/grand-final-stage.png",
   },
   // {
   //   id: "paskibraka-ceremonial",
