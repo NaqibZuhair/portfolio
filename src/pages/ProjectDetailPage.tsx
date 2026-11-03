@@ -50,7 +50,7 @@ export const ProjectDetailPage: React.FC = () => {
             <span>Back to All Projects</span>
           </Link>
 
-          <span className="font-mono text-xs text-[#C6D4E8]/50">
+          <span className="font-mono text-xs text-[#C6D4E8]">
             Case Study {projectIndex + 1} of {projectsData.length}
           </span>
         </div>
@@ -59,11 +59,11 @@ export const ProjectDetailPage: React.FC = () => {
         <header className="space-y-4 mb-12">
           <div className="flex flex-wrap items-center gap-3">
             <Badge variant="electric">{project.category}</Badge>
-            <span className="font-mono text-xs text-[#C6D4E8]/60 flex items-center gap-1.5">
+            <span className="font-mono text-xs text-[#C6D4E8] flex items-center gap-1.5">
               <Calendar className="w-3.5 h-3.5 text-[#8AB4FF]" />
               {project.date}
             </span>
-            <span className="font-mono text-xs text-[#C6D4E8]/40">&middot;</span>
+            <span className="font-mono text-xs text-[#C6D4E8]/60">&middot;</span>
             <span className="font-mono text-xs text-[#8266B5]">{project.type}</span>
           </div>
 
@@ -71,7 +71,7 @@ export const ProjectDetailPage: React.FC = () => {
             {project.title}
           </h1>
 
-          <p className="text-lg sm:text-xl text-[#C6D4E8]/80 max-w-3xl font-sans leading-relaxed">
+          <p className="text-lg sm:text-xl text-[#C6D4E8] max-w-3xl font-sans leading-relaxed">
             {project.tagline}
           </p>
 
@@ -86,7 +86,7 @@ export const ProjectDetailPage: React.FC = () => {
                   <div className="font-headline text-2xl font-bold text-[#8AB4FF]">
                     {stat.value}
                   </div>
-                  <div className="font-mono text-xs text-[#C6D4E8]/60">{stat.label}</div>
+                  <div className="font-mono text-xs text-[#C6D4E8]">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -117,7 +117,7 @@ export const ProjectDetailPage: React.FC = () => {
                   <span>01. Project Overview</span>
                 </div>
                 <h2 className="font-headline text-2xl font-bold text-[#F1F3F7]">Overview</h2>
-                <p className="text-base text-[#C6D4E8]/90 leading-relaxed font-sans">
+                <p className="text-base text-[#F1F3F7] leading-relaxed font-sans">
                   {project.overview}
                 </p>
               </section>
@@ -133,7 +133,7 @@ export const ProjectDetailPage: React.FC = () => {
                 <h2 className="font-headline text-2xl font-bold text-[#F1F3F7]">
                   Problem Statement
                 </h2>
-                <p className="text-sm sm:text-base text-[#C6D4E8]/80 leading-relaxed">
+                <p className="text-sm sm:text-base text-[#C6D4E8] leading-relaxed">
                   {project.problemStatement}
                 </p>
               </section>
@@ -149,7 +149,7 @@ export const ProjectDetailPage: React.FC = () => {
                 <h2 className="font-headline text-2xl font-bold text-[#F1F3F7]">
                   Proposed Solution
                 </h2>
-                <p className="text-base text-[#C6D4E8]/90 leading-relaxed font-sans">
+                <p className="text-base text-[#F1F3F7] leading-relaxed font-sans">
                   {project.proposedSolution}
                 </p>
               </section>
@@ -172,7 +172,7 @@ export const ProjectDetailPage: React.FC = () => {
                       className="p-4 rounded-xl bg-[#11141C] border border-[#202A3B] flex items-start gap-3.5"
                     >
                       <CheckCircle2 className="w-5 h-5 text-[#65C9AE] shrink-0 mt-0.5" />
-                      <p className="text-sm sm:text-base text-[#C6D4E8]/90 leading-relaxed">
+                      <p className="text-sm sm:text-base text-[#C6D4E8] leading-relaxed">
                         {contribution}
                       </p>
                     </div>
@@ -191,7 +191,7 @@ export const ProjectDetailPage: React.FC = () => {
                 <h2 className="font-headline text-2xl font-bold text-[#F1F3F7]">
                   Technical Implementation
                 </h2>
-                <p className="text-base text-[#C6D4E8]/90 leading-relaxed">
+                <p className="text-base text-[#C6D4E8] leading-relaxed">
                   {project.technicalImplementation.architecture}
                 </p>
 
@@ -211,7 +211,7 @@ export const ProjectDetailPage: React.FC = () => {
                   {project.technicalImplementation.highlights.map((h, i) => (
                     <div
                       key={i}
-                      className="p-4 rounded-xl bg-[#11141C] border border-[#202A3B] text-xs font-mono text-[#C6D4E8]/80 leading-relaxed"
+                      className="p-4 rounded-xl bg-[#11141C] border border-[#202A3B] text-xs font-mono text-[#C6D4E8] leading-relaxed"
                     >
                       <span className="text-[#8AB4FF] font-semibold block mb-1">
                         &mdash; Component {i + 1}
@@ -241,7 +241,7 @@ export const ProjectDetailPage: React.FC = () => {
                     </div>
                   ))}
                 </div>
-                <p className="text-sm text-[#C6D4E8]/80 pt-2 border-t border-[#202A3B]/60 leading-relaxed">
+                <p className="text-sm text-[#C6D4E8] pt-2 border-t border-[#202A3B]/60 leading-relaxed">
                   {project.resultsAndEvidence.summary}
                 </p>
               </section>
@@ -271,35 +271,42 @@ export const ProjectDetailPage: React.FC = () => {
               {/* Project Metadata */}
               <div className="pt-4 border-t border-[#202A3B] space-y-3 font-mono text-xs">
                 <div className="flex items-center justify-between">
-                  <span className="text-[#C6D4E8]/60">Timeline:</span>
+                  <span className="text-[#C6D4E8]">Timeline:</span>
                   <span className="text-[#F1F3F7] font-semibold">{project.date}</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-[#C6D4E8]/60">Initiative:</span>
+                  <span className="text-[#C6D4E8]">Initiative:</span>
                   <span className="text-[#8AB4FF] font-semibold">{project.type}</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-[#C6D4E8]/60">Verification:</span>
-                  <span className="text-[#65C9AE] font-semibold">Academic &middot; CV Verified</span>
                 </div>
               </div>
 
-              {/* Repository & Demo Placeholders */}
+              {/* Repository & Demo Actions */}
               <div className="pt-4 border-t border-[#202A3B] space-y-3">
-                <h4 className="font-mono text-xs text-[#C6D4E8]/60 uppercase tracking-wider">
+                <h4 className="font-mono text-xs text-[#C6D4E8] uppercase tracking-wider">
                   Source &amp; Live Links
                 </h4>
 
-                <div className="p-3 rounded-lg bg-[#08090D] border border-dashed border-[#202A3B] text-xs font-mono text-[#C6D4E8]/70 flex items-center gap-2">
+                {/* Non-navigating Pending Repository Button */}
+                <div
+                  className="p-3 rounded-lg bg-[#08090D] border border-dashed border-[#202A3B] text-xs font-mono text-[#C6D4E8] flex items-center gap-2 cursor-default select-none"
+                  title="Repository URL pending public upload"
+                  role="status"
+                >
                   <GithubIcon className="w-4 h-4 text-[#8AB4FF] shrink-0" />
                   <span className="truncate">{project.repoUrlPlaceholder}</span>
                 </div>
 
-                {project.demoUrlPlaceholder && (
-                  <div className="p-3 rounded-lg bg-[#08090D] border border-dashed border-[#202A3B] text-xs font-mono text-[#C6D4E8]/70 flex items-center gap-2">
-                    <ExternalLink className="w-4 h-4 text-[#65C9AE] shrink-0" />
-                    <span className="truncate">{project.demoUrlPlaceholder}</span>
-                  </div>
+                {/* Only render live demo if a real working URL is provided */}
+                {project.liveDemoUrl && (
+                  <Button
+                    href={project.liveDemoUrl}
+                    external
+                    variant="secondary"
+                    className="w-full"
+                    rightIcon={<ExternalLink className="w-4 h-4 text-[#65C9AE]" />}
+                  >
+                    Launch Live Demo
+                  </Button>
                 )}
               </div>
 

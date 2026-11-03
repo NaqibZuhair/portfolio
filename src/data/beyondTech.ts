@@ -1,78 +1,69 @@
-export interface BeyondTechPillar {
+export interface VisualStoryItem {
   id: string;
   title: string;
-  subtitle: string;
-  description: string;
-  metric: string;
-  metricLabel: string;
+  category: string;
+  event: string;
+  caption: string;
+  tag: string;
   imagePlaceholderLabel: string;
-  highlights: string[];
+  expectedPath: string;
 }
 
-export const beyondTechPillars: BeyondTechPillar[] = [
+export const beyondTechGallery: VisualStoryItem[] = [
   {
-    id: "master-of-ceremonies",
+    id: "mc-fdpni",
     title: "Master of Ceremonies & Public Speaking",
-    subtitle: "Commanding national stages with poise and articulacy",
-    description:
-      "Public speaking has shaped my professional identity as profoundly as writing code. Serving as Master of Ceremonies for more than 20 high-stakes institutional and national-level events taught me to read audiences, bridge intricate topics, and maintain flawless stage presence under television and live-broadcast scrutiny.",
-    metric: "20+",
-    metricLabel: "Major Events Hosted",
-    imagePlaceholderLabel: "[REPLACE REQUIRED — MC STAGE PHOTO AT NATIONAL WORKING MEETING / DUTA PNJ]",
-    highlights: [
-      "FDPNI National Working Meeting (attended by the Minister of Education & State Polytechnic Directors)",
-      "PNJ – Hopu LZPU China International Partnership Launch ceremony",
-      "Formal institutional graduation ceremonies and academic inaugurations",
-      "Interactive tech talks and student orientation forums",
-    ],
+    category: "Public Speaking",
+    event: "FDPNI National Working Meeting",
+    caption:
+      "Hosting live proceedings before the Minister of Education and state polytechnic directors across Indonesia.",
+    tag: "National Stage",
+    imagePlaceholderLabel: "[REPLACE REQUIRED — MC STAGE PHOTO AT FDPNI NATIONAL WORKING MEETING]",
+    expectedPath: "/public/images/leadership/mc-fdpni.jpg",
   },
   {
-    id: "diplomacy-representation",
-    title: "Campus Ambassador & Representation",
-    subtitle: "Championing institutional brand and public diplomacy",
-    description:
-      "As President of Duta PNJ (Campus Ambassadors), I spearheaded diplomatic engagement across academia, industry leaders, and prospective students. Leading digital storytelling across modern social media platforms resulted in organic expansion of over 1,000 engaged followers while elevating PNJ's prestige across national networks.",
-    metric: "1,000+",
-    metricLabel: "Organic Audience Growth",
-    imagePlaceholderLabel: "[REPLACE REQUIRED — CAMPUS AMBASSADOR FORMAL DELEGATION PHOTO]",
-    highlights: [
-      "Official institutional representative for high-level partner delegations",
-      "Directed short-form video branding strategy on Instagram and TikTok",
-      "Mentored cohorts of campus ambassadors in stage presence and protocol",
-      "Recipient of institutional Certificate of Appreciation from the PNJ Director",
-    ],
+    id: "ambassador-delegation",
+    title: "Institutional Diplomacy & Representation",
+    category: "Diplomacy",
+    event: "PNJ – Hopu LZPU China Partnership Launch",
+    caption:
+      "Representing Politeknik Negeri Jakarta during international bilateral academic cooperation ceremonies.",
+    tag: "Global Partnership",
+    imagePlaceholderLabel: "[REPLACE REQUIRED — CAMPUS AMBASSADOR DIPLOMATIC DELEGATION PHOTO]",
+    expectedPath: "/public/images/leadership/ambassador-delegation.jpg",
   },
   {
-    id: "event-production-vip",
-    title: "Event Direction & VIP Protocols",
-    subtitle: "Orchestrating large-scale productions with zero margin for error",
-    description:
-      "Directing events like the Grand Final Duta PNJ Batch 6 required synchronizing 30+ team members, 300 seated guests, and strict VIP protocols for ministerial attendees such as Prof. Brian Yuliarto. I manage live rundowns, multi-camera cues, and security protocols with precision.",
-    metric: "300+",
-    metricLabel: "Seated VIPs & Attendees",
-    imagePlaceholderLabel: "[REPLACE REQUIRED — GRAND FINAL DUTA PNJ STAGE & COMMITTEE PHOTO]",
-    highlights: [
-      "VIP protocol management for Minister of Higher Education, Science, and Technology",
-      "Directing 30+ cross-functional committee members across logistics, stage, and PR",
-      "Sponsorship partnerships with 8 corporate sponsors and 6 national media outlets",
-      "Collaborative operations with PT Nindya, Azzura, Insta Beauty Center, RRI, and Antara News",
-    ],
+    id: "grand-final-protocol",
+    title: "Live Production & VIP Protocol",
+    category: "Event Direction",
+    event: "Grand Final Duta PNJ Batch 6",
+    caption:
+      "Managing live stage cues and ceremonial VIP protocol for keynote remarks by Minister Prof. Brian Yuliarto.",
+    tag: "VIP Protocol",
+    imagePlaceholderLabel: "[REPLACE REQUIRED — GRAND FINAL DUTA PNJ CEREMONY STAGE PHOTO]",
+    expectedPath: "/public/images/leadership/grand-final-stage.png",
   },
+  // {
+  //   id: "paskibraka-ceremonial",
+  //   title: "High-Pressure Composure & Drill",
+  //   category: "Ceremonial Service",
+  //   event: "PASKIBRAKA National Flag-Raising Ceremony",
+  //   caption:
+  //     "Executing synchronized ceremonial drill as core flag hoister under live district-wide scrutiny.",
+  //   tag: "Ceremonial Honor",
+  //   imagePlaceholderLabel: "[REPLACE REQUIRED — PASKIBRAKA CEREMONIAL FLAG HOISTER PHOTO]",
+  //   expectedPath: "/public/images/leadership/paskibraka-flag-hoister.jpg",
+  // },
   {
-    id: "ceremonial-discipline",
-    title: "Discipline & High-Pressure Composure",
-    subtitle: "Forged in national ceremonial service",
-    description:
-      "Serving as a core Flag Hoister (Pengerek Bendera) in PASKIBRAKA Kabupaten Bogor instilled an uncompromising standard of discipline, physical endurance, and ceremonial composure under intense public gaze. This foundation anchors my work ethic, attention to detail, and reliability in every technical and leadership undertaking.",
-    metric: "100%",
-    metricLabel: "Ceremonial Precision",
-    imagePlaceholderLabel: "[REPLACE REQUIRED — PASKIBRAKA CEREMONIAL FLAG HOISTER PHOTO]",
-    highlights: [
-      "Selected through rigorous district-wide testing and physical endurance selection",
-      "Executed flawless ceremonial hoisting at the National Flag-Raising Ceremony",
-      "Awarded Official Commendation by the Regent of Bogor",
-      "Pramuka Garuda (Penegak Rank) — highest rank in Indonesian Scouting",
-    ],
+    id: "mc-open-house-pnj",
+    title: "Master of Ceremonies & Public Speaking",
+    category: "Public Speaking",
+    event: "Open House PNJ 2026 — Day 2",
+    caption:
+    "Co-hosting the main auditorium program, engaging audiences, and facilitating partner presentations.",
+    tag: "Main Stage",
+    imagePlaceholderLabel:
+      "[OPEN HOUSE PNJ 2026 — MASTER OF CEREMONIES DOCUMENTATION]",
+    expectedPath: "/images/leadership/mc-open-house-pnj.JPG",
   },
 ];
-

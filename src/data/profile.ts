@@ -22,14 +22,16 @@ export interface ProfileData {
   };
   aboutStory: {
     intro: string;
-    technical: string;
-    aiAndInnovation: string;
-    leadership: string;
+    highlights: Array<{
+      title: string;
+      description: string;
+      tag: string;
+    }>;
   };
   metrics: Array<{
     label: string;
     value: string;
-    description: string;
+    context: string;
   }>;
   resumeUrl: string;
 }
@@ -60,36 +62,44 @@ export const profileData: ProfileData = {
   },
   aboutStory: {
     intro:
-      "I am an Informatics Engineering undergraduate at Politeknik Negeri Jakarta with a relentless curiosity for how robust systems and intuitive interfaces converge. My journey spans full-stack software development, applied artificial intelligence, and organizational leadership.",
-    technical:
-      "My primary professional identity is grounded in software engineering. From architecting responsive modern web platforms to designing backend microservices, REST APIs, and database schemas with PostgreSQL and Prisma, I focus on building reliable, scalable, and maintainable software solutions.",
-    aiAndInnovation:
-      "Through the Asah AI Engineering Cohort by Dicoding & GoTo, I dive deep into deep learning, computer vision, natural language processing, and LLM tool/function calling engines. I believe modern software should intelligently adapt to human intent rather than merely parsing inputs.",
-    leadership:
-      "Beyond technical engineering, I actively lead teams and engage communities. As President of Duta PNJ Batch 5 and Project Officer for high-profile national events, I have hosted VIP dignitaries including government ministers, directed 30+ person cross-functional committees, and bridged technical complexity with clear, empathetic communication.",
+      "I am an Informatics Engineering undergraduate at Politeknik Negeri Jakarta with a strong interest in software engineering and applied artificial intelligence. I enjoy turning ideas into practical digital solutions, building reliable systems, and working with people from different backgrounds to bring projects to life.",
+    highlights: [
+      {
+        title: "Software Engineering Core",
+        description:
+          "Developing full-stack web applications, REST APIs, and database schemas with React, TypeScript, Node.js, and PostgreSQL. Focused on clean component architecture and scalable code quality.",
+        tag: "Architecture & Systems",
+      },
+      {
+        title: "Applied AI & Intelligent Systems",
+        description:
+          "Exploring how machine learning workflows and multi-provider LLM tool-calling enhance real-world user experiences, developed through coursework and the Asah AI Engineering cohort.",
+        tag: "Applied AI",
+      },
+      {
+        title: "Leadership & Public Communication",
+        description:
+          "Facilitating team alignment, organizational governance, and stakeholder diplomacy. Experienced in directing large-scale event operations and commanding stages as Master of Ceremonies.",
+        tag: "Team Leadership",
+      },
+    ],
   },
   metrics: [
     {
-      value: "98.15%",
-      label: "Model Accuracy",
-      description: "Rice grain CNN image classification model test accuracy",
-    },
-    {
-      value: "15+",
-      label: "AI Tool Schemas",
-      description: "Custom function calling schemas in AI finance assistant",
+      value: "4",
+      label: "Engineered Systems",
+      context: "Full-stack & AI case studies",
     },
     {
       value: "20+",
       label: "Events Hosted as MC",
-      description: "Institutional & national events with high-level dignitaries",
+      context: "Institutional & national stages",
     },
     {
       value: "1,500+",
-      label: "Event Attendees",
-      description: "Students & stakeholders coordinated across major events",
+      label: "Attendees Coordinated",
+      context: "Open House PNJ 2026 logistics",
     },
   ],
   resumeUrl: "/documents/Naqib_Zuhair_CV.pdf",
 };
-

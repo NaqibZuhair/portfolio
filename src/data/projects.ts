@@ -2,6 +2,7 @@ export interface ProjectData {
   id: string;
   slug: string;
   title: string;
+  image?: string;
   tagline: string;
   category: string;
   type: string;
@@ -9,10 +10,11 @@ export interface ProjectData {
   featured: boolean;
   shortDescription: string;
   techStack: string[];
+  repoUrl?: string;
   imagePlaceholderLabel: string;
   architecturePlaceholderLabel?: string;
   repoUrlPlaceholder: string;
-  demoUrlPlaceholder?: string;
+  liveDemoUrl?: string; // Only set when actual working URL exists
   stats?: Array<{ label: string; value: string }>;
   overview: string;
   problemStatement: string;
@@ -32,6 +34,7 @@ export const projectsData: ProjectData[] = [
   {
     id: "personal-finance-tracker",
     slug: "personal-finance-tracker",
+    image: "/images/projects/personal-finance-tracker.png",
     title: "Personal Finance Tracker & AI-Powered Financial Assistant",
     tagline: "Natural-language expense tracking and autonomous financial intelligence via multi-provider LLM orchestration.",
     category: "Full-Stack & Applied AI",
@@ -39,7 +42,7 @@ export const projectsData: ProjectData[] = [
     date: "March 2026 – July 2026",
     featured: true,
     shortDescription:
-      "A personal finance management application featuring natural-language expense logging, WhatsApp conversational input, multimodal receipt/voice processing, and resilient multi-provider LLM fallback.",
+      "A flagship personal finance application featuring natural-language expense logging via WhatsApp (Baileys), multimodal receipt and voice processing, and a resilient multi-provider LLM fallback pipeline.",
     techStack: [
       "React 19",
       "TypeScript 5.7",
@@ -57,25 +60,25 @@ export const projectsData: ProjectData[] = [
     ],
     imagePlaceholderLabel: "[REPLACE REQUIRED — PERSONAL FINANCE TRACKER SCREENSHOT]",
     architecturePlaceholderLabel: "[REPLACE REQUIRED — AI AGENT & SYSTEM ARCHITECTURE DIAGRAM]",
+    repoUrl: "https://github.com/NaqibZuhair/personal-finance-tracker",
     repoUrlPlaceholder: "[ADD GITHUB REPOSITORY URL]",
-    demoUrlPlaceholder: "[ADD LIVE DEMO URL]",
     stats: [
       { label: "AI Tool Schemas", value: "15+" },
       { label: "LLM Providers", value: "4 (Fallback)" },
       { label: "Input Modalities", value: "Text, Audio, OCR" },
     ],
     overview:
-      "The Personal Finance Tracker & AI-Powered Financial Assistant is an intelligent full-stack financial ecosystem designed to eliminate the friction of manual bookkeeping. By meeting users where they already communicate—via WhatsApp and interactive web dashboards—it leverages AI tool-calling to convert natural colloquial messages, receipt photos, and audio notes into structured ledger entries and budget forecasts.",
+      "The Personal Finance Tracker & AI-Powered Financial Assistant is a full-stack financial ecosystem designed to eliminate manual bookkeeping friction. By meeting users through WhatsApp conversational chat and an interactive web dashboard, it utilizes an AI tool-calling engine to translate everyday conversational inputs, receipt images, and voice notes into structured PostgreSQL ledger entries.",
     problemStatement:
-      "Traditional personal finance apps fail primarily due to user friction: manual categorizations, tedious receipt typing, and rigid forms lead to user abandonment within weeks. Furthermore, single-provider LLM backends frequently suffer from rate-limits and latency spikes, making conversational logging unreliable in production.",
+      "Manual personal finance tracking often fails due to input friction and tedious form-filling. Furthermore, single-provider LLM APIs encounter rate-limit spikes and temporary outages, making conversational logging fragile in production.",
     proposedSolution:
-      "A dual-interface platform comprising a high-performance React dashboard and an asynchronous WhatsApp daemon (built via Baileys & WebSockets). The backend implements a resilient multi-provider LLM fallback pipeline that systematically attempts execution across Gemini, Cerebras, Groq, and OpenRouter, backed by OCR and 15+ strictly typed Zod tool schemas.",
+      "A dual-interface architecture combining a high-performance React dashboard and an asynchronous WhatsApp messaging service (via Baileys and WebSockets). The backend executes structured queries via 15+ Zod tool schemas, governed by a dynamic fallback router spanning Gemini, Cerebras, Groq, and OpenRouter for high availability.",
     contributions: [
-      "Architected and deployed the WhatsApp integration using Baileys and persistent WebSocket services, enabling frictionless conversational expense logging.",
-      "Engineered multimodal input pipelines handling raw image uploads for OCR receipt parsing and voice note transcription workflows.",
-      "Designed an extensible AI tool-calling engine featuring over 15 typed tool schemas to execute structured database queries, budget allocations, and analytics.",
-      "Implemented full relational database operations using Prisma ORM with PostgreSQL, hosted on Supabase and Neon, featuring transactional payday budget allocation.",
-      "Constructed a self-healing multi-provider LLM fallback router spanning Gemini, Cerebras, Groq, and OpenRouter to guarantee high availability and bypass rate limits.",
+      "Architected the WhatsApp messaging integration using the Baileys library and WebSocket-based services for conversational logging.",
+      "Engineered multimodal input pipelines handling image uploads for OCR receipt parsing and audio voice note transcriptions.",
+      "Designed an extensible AI tool-calling engine featuring over 15 typed tool schemas for structured CRUD, payday allocation, and budget checks.",
+      "Implemented transactional database operations using Prisma ORM with PostgreSQL, hosted across Supabase and Neon.",
+      "Built a self-healing multi-provider LLM router to dynamically fallback across Gemini, Cerebras, Groq, and OpenRouter.",
     ],
     technicalImplementation: {
       architecture:
@@ -93,12 +96,13 @@ export const projectsData: ProjectData[] = [
         "Over 15 distinct functional tool actions supporting split expenses, payday allocations, and threshold warnings.",
       ],
       summary:
-        "Successfully demonstrated an autonomous financial assistant that bridges conversational messaging with enterprise-grade relational persistence and multi-model AI resilience.",
+        "Demonstrated an autonomous financial assistant bridging conversational messaging with enterprise relational persistence and multi-model AI resilience.",
     },
   },
   {
     id: "edu-insight",
     slug: "edu-insight",
+    image: "/images/projects/edu-insight.png",
     title: "EduInsight — Education Data Intelligence Platform",
     tagline: "Bridging educational disparity and infrastructure gaps through open government data intelligence.",
     category: "Data Intelligence & Frontend",
@@ -106,32 +110,32 @@ export const projectsData: ProjectData[] = [
     date: "October 2026 – November 2026",
     featured: true,
     shortDescription:
-      "An education-focused digital platform addressing regional disparities in educational infrastructure by synthesizing open government datasets into transparent, actionable intelligence.",
+      "An education data intelligence concept developed for Web In Action 2026, synthesizing open government data to analyze regional educational infrastructure disparities and support public transparency.",
     techStack: ["React", "Vite", "Tailwind CSS", "JavaScript", "Open Government Data"],
     imagePlaceholderLabel: "[REPLACE REQUIRED — EDUINSIGHT PLATFORM SCREENSHOT]",
     architecturePlaceholderLabel: "[REPLACE REQUIRED — DATA PIPELINE & UI ARCHITECTURE DIAGRAM]",
+    repoUrl: "https://github.com/NaqibZuhair/edu-insight",
     repoUrlPlaceholder: "[ADD GITHUB REPOSITORY URL]",
-    demoUrlPlaceholder: "[ADD LIVE DEMO URL]",
     stats: [
       { label: "Target Scope", value: "Regional Disparity" },
       { label: "Data Focus", value: "Open Govt Data" },
       { label: "Role", value: "Frontend & Concept" },
     ],
     overview:
-      "Developed for Web In Action (WIA) 2026, EduInsight is an open data intelligence concept created to shed light on regional infrastructure gaps in Indonesian education. By synthesizing publicly available governmental records into intuitive visual analytics, the platform enables educators, civic advocates, and policymakers to identify critical deficiencies in school resources.",
+      "Developed for Web In Action (WIA) 2026, EduInsight is an open data intelligence concept created to address regional infrastructure gaps in education. By synthesizing publicly available governmental records into intuitive visual analytics, the platform enables educators and civic stakeholders to identify infrastructure deficiencies.",
     problemStatement:
-      "Disparities in school infrastructure across regions frequently go unnoticed by the public due to fragmented, inaccessible tabular open data. Without actionable synthesis, citizens and local stakeholders lack the tools needed to advocate for equitable resource distribution.",
+      "Regional school infrastructure disparities frequently go unnoticed by the public due to fragmented, inaccessible tabular open datasets. Without accessible data synthesis, communities lack clear indicators to advocate for equitable resources.",
     proposedSolution:
-      "A lightweight, reactive web platform utilizing modern component architecture in React and Tailwind CSS. The solution connects open data repositories with interactive exploratory components, allowing users to drill down into district-level metrics and compare educational facilities.",
+      "A lightweight web platform utilizing modern component architecture in React and Tailwind CSS. The solution connects open data repositories with exploratory dashboard views, allowing users to inspect district-level metrics and compare educational facilities.",
     contributions: [
-      "Contributed to the conceptualization and frontend development of the education-focused digital platform.",
-      "Explored open government datasets to identify critical educational infrastructure indicators suitable for public consumption.",
-      "Engineered responsive UI views using React and Tailwind CSS to translate raw data indicators into accessible visual representations.",
+      "Contributed to frontend development and interface conceptualization using React and Tailwind CSS.",
+      "Explored open government datasets to identify critical educational infrastructure indicators.",
+      "Engineered responsive UI views to translate raw indicators into accessible visual representations.",
       "Formulated solution concepts connecting civic transparency with actionable stakeholder decision-making.",
     ],
     technicalImplementation: {
       architecture:
-        "Single-page application powered by React and Vite with a modular component design. Clean data transformations map open datasets into filterable dashboard components, styled with Tailwind CSS for high accessibility across device viewports.",
+        "Single-page application powered by React and Vite with a modular component design. Clean data transformations map open datasets into filterable dashboard components, styled with Tailwind CSS for accessible responsive layouts.",
       highlights: [
         "Exploratory filtering based on regional educational markers.",
         "Modern semantic markup prioritizing clarity and low-bandwidth accessibility.",
@@ -147,68 +151,68 @@ export const projectsData: ProjectData[] = [
         "A focused proof-of-concept demonstrating how modern frontend engineering can transform opaque public data into civic empowerment.",
     },
   },
-  {
-    id: "rice-classification",
-    slug: "rice-classification",
-    title: "Rice Image Classification CNN Model",
-    tagline: "High-accuracy multi-class agricultural grain classification using deep Convolutional Neural Networks.",
-    category: "Machine Learning & Deep Learning",
-    type: "Personal / Dicoding Project",
-    date: "October 2026",
-    featured: true,
-    shortDescription:
-      "A multi-class rice grain image classification model developed with TensorFlow and Keras, achieving 98.15% test accuracy and exported to TF-Lite and TensorFlow.js for cross-platform deployment.",
-    techStack: [
-      "Python",
-      "TensorFlow",
-      "Keras",
-      "TensorFlow Lite (TF-Lite)",
-      "TensorFlow.js",
-      "NumPy",
-    ],
-    imagePlaceholderLabel: "[REPLACE REQUIRED — RICE CLASSIFICATION MODEL ACCURACY PLOT & CONFUSION MATRIX]",
-    architecturePlaceholderLabel: "[REPLACE REQUIRED — CNN MODEL ARCHITECTURE DIAGRAM]",
-    repoUrlPlaceholder: "[ADD GITHUB REPOSITORY URL]",
-    demoUrlPlaceholder: "[ADD LIVE DEMO URL]",
-    stats: [
-      { label: "Test Accuracy", value: "98.15%" },
-      { label: "Test Loss", value: "0.0568" },
-      { label: "Formats", value: "SavedModel, TFLite, TF.js" },
-    ],
-    overview:
-      "An end-to-end deep learning project focused on high-precision agricultural grain inspection. Developed as part of advanced machine learning exploration with Dicoding, this project trains a custom Convolutional Neural Network (CNN) to differentiate and classify distinct rice grain varieties from high-resolution micro-imagery.",
-    problemStatement:
-      "Manual grain quality inspection in agricultural distribution is labor-intensive, error-prone, and inconsistent. Automated computer vision models require robust generalization across lighting variations, grain rotations, and microscopic texture differences while maintaining lightweight footprints suitable for edge deployment.",
-    proposedSolution:
-      "Constructed a deep convolutional architecture with tuned convolutional blocks, batch normalization, and dropout regularization. The pipeline incorporates rigorous image preprocessing and data augmentation before training, followed by quantization and multi-format export to support edge mobile devices and browser execution.",
-    contributions: [
-      "Engineered data preprocessing and geometric augmentation pipelines (rotation, horizontal flips, zoom, and normalization) to prevent overfitting.",
-      "Designed and trained the Convolutional Neural Network architecture in Keras, iterating through learning rate schedulers and optimizer configurations.",
-      "Conducted extensive hyperparameter tuning to achieve an optimal balance between parameter size and validation precision.",
-      "Exported the final trained model into TensorFlow SavedModel, TensorFlow Lite (.tflite), and TensorFlow.js (.json) formats for cross-platform edge and browser deployment.",
-    ],
-    technicalImplementation: {
-      architecture:
-        "Sequential CNN pipeline implemented in TensorFlow/Keras with stacked 2D convolutional layers, ReLU activation, MaxPooling, Batch Normalization, and dense classification layers with Softmax output. Converted via TFLite Converter for mobile acceleration.",
-      highlights: [
-        "98.15% evaluation accuracy achieved on unseen test split.",
-        "Low test loss of 0.0568 demonstrating exceptional convergence and absence of overfitting.",
-        "Multi-runtime portability spanning server, browser, and mobile targets.",
-      ],
-    },
-    resultsAndEvidence: {
-      metrics: [
-        "98.15% Test Accuracy verified on evaluation test split.",
-        "0.0568 Test Loss.",
-        "Complete export to TensorFlow SavedModel, TF-Lite, and TensorFlow.js formats.",
-      ],
-      summary:
-        "Proves rigorous machine learning and deep learning mastery, showing full-cycle capability from raw data ingestion to lightweight edge-ready model artifacts.",
-    },
-  },
+  // {
+  //   id: "rice-classification",
+  //   slug: "rice-classification",
+  //   title: "Rice Image Classification CNN Model",
+  //   tagline: "A personal machine learning exploration project classifying multi-class rice grain varieties using Convolutional Neural Networks.",
+  //   category: "Machine Learning & Deep Learning",
+  //   type: "Personal Learning / Dicoding Project",
+  //   date: "October 2026",
+  //   featured: true,
+  //   shortDescription:
+  //     "A personal machine learning exploration project developed with TensorFlow and Keras, training a Convolutional Neural Network to classify multi-class rice grains and exporting edge-ready TF-Lite and TensorFlow.js models.",
+  //   techStack: [
+  //     "Python",
+  //     "TensorFlow",
+  //     "Keras",
+  //     "TensorFlow Lite (TF-Lite)",
+  //     "TensorFlow.js",
+  //     "NumPy",
+  //   ],
+  //   imagePlaceholderLabel: "[REPLACE REQUIRED — RICE CLASSIFICATION MODEL ACCURACY PLOT & CONFUSION MATRIX]",
+  //   architecturePlaceholderLabel: "[REPLACE REQUIRED — CNN MODEL ARCHITECTURE DIAGRAM]",
+  //   repoUrlPlaceholder: "[ADD GITHUB REPOSITORY URL]",
+  //   stats: [
+  //     { label: "Evaluation Accuracy", value: "98.15%" },
+  //     { label: "Evaluation Loss", value: "0.0568" },
+  //     { label: "Export Formats", value: "TF-Lite & TF.js" },
+  //   ],
+  //   overview:
+  //     "A personal deep learning study project focused on agricultural grain image classification. Developed during machine learning coursework with Dicoding, this project evaluates the performance of a custom Convolutional Neural Network (CNN) in categorizing distinct rice grain varieties from sample imagery.",
+  //   problemStatement:
+  //     "Understanding image classification fundamentals requires exploring feature extraction, spatial convolutions, and model regularization. The goal was to build a disciplined training pipeline capable of generalizing across varied grain orientations and lighting conditions.",
+  //   proposedSolution:
+  //     "Constructed a sequential convolutional architecture with batch normalization, pooling, and dropout regularization. The workflow incorporates dataset preprocessing and image augmentation, followed by evaluation on an unseen test split and multi-format model export for browser and mobile runtimes.",
+  //   contributions: [
+  //     "Implemented dataset preprocessing and geometric data augmentation pipelines (rotation, flips, zoom, and normalization).",
+  //     "Configured and trained the CNN architecture in Keras, experimenting with optimizers and learning rate parameters.",
+  //     "Evaluated model convergence through validation loss and accuracy curves.",
+  //     "Exported the final model to TensorFlow SavedModel, TensorFlow Lite (.tflite), and TensorFlow.js (.json) formats for cross-platform experimentation.",
+  //   ],
+  //   technicalImplementation: {
+  //     architecture:
+  //       "Sequential CNN pipeline implemented in TensorFlow/Keras with stacked 2D convolutional layers, ReLU activation, MaxPooling, Batch Normalization, and dense classification layers with Softmax output. Converted via TFLite Converter for mobile acceleration.",
+  //     highlights: [
+  //       "Achieved 98.15% evaluation accuracy on the experimental test dataset.",
+  //       "Evaluation test loss of 0.0568 indicating steady convergence on the sample data.",
+  //       "Exported cross-platform formats spanning TF SavedModel, TF-Lite, and TensorFlow.js.",
+  //     ],
+  //   },
+  //   resultsAndEvidence: {
+  //     metrics: [
+  //       "98.15% evaluation accuracy verified on the held-out test split.",
+  //       "0.0568 evaluation loss.",
+  //       "Model successfully converted to TensorFlow Lite and TensorFlow.js formats.",
+  //     ],
+  //     summary:
+  //       "A practical coursework exploration demonstrating foundational competency in deep learning workflows, model training, evaluation metrics, and edge export formats.",
+  //   },
+  // },
   {
     id: "ruangin-pnj",
     slug: "ruangin-pnj",
+    image: "/images/projects/ruangin-pnj.jpg",
     title: "RuanginPNJ — Integrated Room Reservation & SQA System",
     tagline: "Campus facility booking platform reinforced with automated SQA and performance testing.",
     category: "Full-Stack & Quality Assurance",
@@ -216,7 +220,7 @@ export const projectsData: ProjectData[] = [
     date: "September 2025 – December 2025",
     featured: true,
     shortDescription:
-      "An integrated room reservation system supporting institutional room and library management, featuring Tailwind CSS v4 administrative dashboards and rigorous automated UI and performance testing.",
+      "An integrated room reservation system supporting institutional room and library management, featuring Tailwind CSS v4 administrative dashboards, Katalon Studio automated UI tests, and Apache JMeter performance testing.",
     techStack: [
       "Tailwind CSS v4",
       "Katalon Studio",
@@ -227,31 +231,31 @@ export const projectsData: ProjectData[] = [
     ],
     imagePlaceholderLabel: "[REPLACE REQUIRED — RUANGINPNJ DASHBOARD SCREENSHOT]",
     architecturePlaceholderLabel: "[REPLACE REQUIRED — SQA TEST PLAN & JMETER LOAD GRAPH]",
-    repoUrlPlaceholder: "[ADD GITHUB REPOSITORY URL]",
-    demoUrlPlaceholder: "[ADD LIVE DEMO URL]",
+    repoUrl: "https://github.com/Shidqisep/PBL-RuanginPNJ",
+    repoUrlPlaceholder: "https://github.com/Shidqisep/PBL-RuanginPNJ",
     stats: [
       { label: "Team Size", value: "5 Developers" },
       { label: "Testing", value: "Katalon & JMeter" },
       { label: "UI Engine", value: "Tailwind CSS v4" },
     ],
     overview:
-      "RuanginPNJ was engineered during a semester-long Project-Based Learning (PBL) initiative at Politeknik Negeri Jakarta. The project tackled campus resource management by building a centralized digital system for scheduling and reserving academic auditoriums, lecture halls, and library spaces, coupled with comprehensive software quality assurance protocols.",
+      "RuanginPNJ was engineered during a semester-long Project-Based Learning (PBL) initiative at Politeknik Negeri Jakarta. The project addressed institutional space management by developing a centralized system for reserving auditorium and library facilities, paired with software quality assurance benchmarking.",
     problemStatement:
-      "Manual and paper-based room booking at educational institutions results in scheduling collisions, double bookings, lack of real-time availability visibility, and vulnerability to concurrency spikes during peak registration windows.",
+      "Manual room booking at campus facilities risks scheduling collisions and lack of real-time visibility. Software solutions must undergo rigorous automated quality assurance to ensure interface reliability and concurrency resilience.",
     proposedSolution:
-      "A responsive, secure reservation management platform accompanied by an administrative dashboard. The system was validated against stringent software quality assurance benchmarks, combining manual exploratory testing, structural code analysis, automated UI end-to-end suites, and stress load testing.",
+      "A responsive reservation platform with an administrative dashboard built using Tailwind CSS v4. The system was validated against structured quality assurance protocols combining manual testing, automated UI test scripts in Katalon Studio, and load stress testing via Apache JMeter.",
     contributions: [
-      "Engineered responsive administrative dashboard views and reservation management interfaces utilizing modern Tailwind CSS v4.",
-      "Formulated module-level Software Quality Assurance (SQA) test plans, executing manual exploratory and edge-case testing.",
-      "Authored automated UI test automation test suites using Katalon Studio to validate user reservation workflows and authentication states.",
-      "Configured and ran concurrency and stress load testing with Apache JMeter to analyze system throughput and identify bottleneck response thresholds.",
-      "Collaborated within a 5-member development team adhering to Git branching strategies, issue tracking, and peer code reviews.",
+      "Developed responsive administrative dashboard views and reservation management interfaces using Tailwind CSS v4.",
+      "Formulated module-level software quality assurance (SQA) test plans and performed manual exploratory testing.",
+      "Authored automated UI test automation suites using Katalon Studio to validate reservation and authentication workflows.",
+      "Conducted concurrency stress testing with Apache JMeter to analyze system throughput and response thresholds.",
+      "Collaborated within a 5-member development team adhering to Git branching, issue tracking, and peer reviews.",
     ],
     technicalImplementation: {
       architecture:
-        "Collaborative multi-tier web application structured around clean component boundaries and modular UI templates. Software Quality Assurance infrastructure established using Katalon Studio for continuous regression and Apache JMeter for performance stress analysis.",
+        "Multi-tier web application structured around clean component boundaries and modular UI templates. Software Quality Assurance infrastructure established using Katalon Studio for regression and Apache JMeter for performance stress analysis.",
       highlights: [
-        "Rapid responsive UI styling powered by Tailwind CSS v4 utility architecture.",
+        "Responsive administrative dashboard powered by Tailwind CSS v4.",
         "Automated regression coverage reducing manual validation time for critical booking flows.",
         "Performance benchmarks establishing response times and peak concurrency tolerances.",
       ],
@@ -263,8 +267,7 @@ export const projectsData: ProjectData[] = [
         "Zero critical regressions during final system demonstration.",
       ],
       summary:
-        "Showcased both frontend implementation skill and engineering discipline through systematic software quality assurance and team collaboration.",
+        "Demonstrated frontend implementation discipline alongside systematic software quality assurance and cross-functional team collaboration.",
     },
   },
 ];
-

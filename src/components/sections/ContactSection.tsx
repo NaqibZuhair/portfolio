@@ -17,7 +17,7 @@ export const ContactSection: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 relative border-t border-[#202A3B]/60 bg-[#08090D] overflow-hidden">
+    <section id="contact" className="py-24 relative border-t border-[#202A3B]/60 bg-[#08090D] overflow-hidden scroll-mt-28">
       {/* Background ambient lighting */}
       <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#8AB4FF]/10 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute top-1/2 left-10 w-[300px] h-[300px] bg-[#8266B5]/10 rounded-full blur-[100px] pointer-events-none" />
@@ -31,7 +31,7 @@ export const ContactSection: React.FC = () => {
             <h2 className="font-headline text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#F1F3F7] tracking-tight">
               Have an idea? Let's build something meaningful.
             </h2>
-            <p className="text-base sm:text-lg text-[#C6D4E8]/80 max-w-2xl mx-auto font-sans leading-relaxed pt-2">
+            <p className="text-base sm:text-lg text-[#C6D4E8] max-w-2xl mx-auto font-sans leading-relaxed pt-2">
               Whether you are looking for a dedicated software engineer, exploring applied AI engineering, or seeking a proven leader and communicator for impactful initiatives—let's connect.
             </p>
           </ScrollReveal>
@@ -40,7 +40,7 @@ export const ContactSection: React.FC = () => {
         {/* Contact Interaction Card */}
         <ScrollReveal delay={0.1}>
           <div className="max-w-3xl mx-auto">
-            <Card className="p-8 sm:p-12 border-[#202A3B] bg-[#11141C]/80 backdrop-blur-xl shadow-2xl relative">
+            <Card className="p-8 sm:p-12 border-[#202A3B] bg-[#11141C]/90 backdrop-blur-xl shadow-2xl relative">
               <div className="absolute top-0 right-0 p-4">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-[#65C9AE]/10 text-[#65C9AE] border border-[#65C9AE]/30">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#65C9AE] animate-ping" />
@@ -50,7 +50,7 @@ export const ContactSection: React.FC = () => {
 
               {/* Direct Email Pill with Copy */}
               <div className="space-y-6 pt-4 text-center">
-                <p className="font-mono text-xs text-[#C6D4E8]/60 uppercase tracking-widest">
+                <p className="font-mono text-xs text-[#C6D4E8] uppercase tracking-widest">
                   Direct Inquiries &amp; Correspondences
                 </p>
 
@@ -116,7 +116,7 @@ export const ContactSection: React.FC = () => {
                   >
                     <LinkedinIcon className="w-4 h-4 text-[#8AB4FF]" />
                     <span>linkedin.com/in/naqibzuhair</span>
-                    <ArrowUpRight className="w-3.5 h-3.5 text-[#C6D4E8]/40" />
+                    <ArrowUpRight className="w-3.5 h-3.5 text-[#C6D4E8]" />
                   </a>
 
                   <a
@@ -127,12 +127,12 @@ export const ContactSection: React.FC = () => {
                   >
                     <GithubIcon className="w-4 h-4 text-[#8AB4FF]" />
                     <span>github.com/naqibzuhair</span>
-                    <ArrowUpRight className="w-3.5 h-3.5 text-[#C6D4E8]/40" />
+                    <ArrowUpRight className="w-3.5 h-3.5 text-[#C6D4E8]" />
                   </a>
                 </div>
 
                 {/* Location Stamp */}
-                <p className="font-mono text-xs text-[#C6D4E8]/50 pt-2">
+                <p className="font-mono text-xs text-[#C6D4E8] pt-2">
                   Politeknik Negeri Jakarta &middot; Jakarta, Indonesia (UTC+7)
                 </p>
               </div>

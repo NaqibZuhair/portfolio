@@ -1,119 +1,141 @@
 export interface AchievementItem {
   id: string;
   title: string;
+  image?: string;
   issuer: string;
   date: string;
   category: "certification" | "honor" | "fellowship";
   hours?: string;
+  badge?: string;
   description: string;
+  featured: boolean;
+  aspectRatio: "landscape" | "portrait";
+  credentialId?: string; // Set when official credential ID is issued
+  verificationUrl?: string; // Set when official verification URL is active
   skillsAcquired?: string[];
   imagePlaceholderLabel: string;
-  credentialUrlPlaceholder?: string;
-  badge?: string;
 }
 
 export const achievementsData: AchievementItem[] = [
   {
     id: "appreciation-director-pnj",
+    image: "/images/certificates/appreciation-director-pnj.jpg",
     title: "Certificate of Appreciation — Director of Politeknik Negeri Jakarta",
     issuer: "Director of Politeknik Negeri Jakarta",
     date: "August 2026",
     category: "honor",
     badge: "Institutional Honor",
+    featured: true,
+    aspectRatio: "landscape",
     description:
-      "Received official institutional recognition from the Director of Politeknik Negeri Jakarta for leadership and outstanding contributions as President of Duta PNJ Batch 5.",
+      "Awarded official institutional commendation by the Director of PNJ for leadership as President of Duta PNJ Batch 5.",
     skillsAcquired: ["Organizational Governance", "Institutional Representation", "Strategic Leadership"],
     imagePlaceholderLabel: "[REPLACE REQUIRED — CERTIFICATE OF APPRECIATION FROM PNJ DIRECTOR IMAGE]",
   },
-  {
-    id: "asah-ai-engineering",
-    title: "AI Engineering Cohort — Asah",
-    issuer: "Dicoding and GoTo",
-    date: "August 2026 – Present",
-    category: "fellowship",
-    badge: "Elite Cohort",
-    description:
-      "Selected for a highly competitive structured AI Engineering development program covering software engineering foundations, Python programming, version control, and advanced prompt engineering.",
-    skillsAcquired: ["Software Engineering Foundations", "Python", "Prompt Engineering", "Applied AI Workflows"],
-    imagePlaceholderLabel: "[REPLACE REQUIRED — ASAH AI ENGINEERING COHORT ACCEPTANCE & COMPLETION CERTIFICATE]",
-  },
+  // {
+  //   id: "asah-ai-engineering",
+  //   title: "AI Engineering Cohort — Asah",
+  //   issuer: "Dicoding and GoTo",
+  //   date: "August 2026 – Present",
+  //   category: "fellowship",
+  //   badge: "Cohort Fellow",
+  //   featured: true,
+  //   aspectRatio: "landscape",
+  //   description:
+  //     "Selected for a structured AI engineering cohort covering software engineering foundations, Python, and prompt engineering.",
+  //   skillsAcquired: ["Python", "Applied AI", "Prompt Engineering", "Software Engineering"],
+  //   imagePlaceholderLabel: "[REPLACE REQUIRED — ASAH AI ENGINEERING COHORT ACCEPTANCE CERTIFICATE]",
+  // },
   {
     id: "dicoding-deep-learning",
+    image: "/images/certificates/dicoding-deep-learning.jpg",
     title: "Belajar Fundamental Deep Learning",
     issuer: "Dicoding Indonesia",
     date: "October 2026",
     category: "certification",
     hours: "110 Learning Hours",
     badge: "110 Hours",
+    featured: true,
+    aspectRatio: "landscape",
     description:
-      "Completed comprehensive training covering neural network architectures using TensorFlow and Keras, computer vision, natural language processing, RNN/LSTM networks, time-series forecasting, and generative models.",
-    skillsAcquired: ["TensorFlow", "Keras", "Convolutional Neural Networks", "NLP & Computer Vision", "RNN/LSTM"],
+      "110-hour curriculum covering neural network architectures with TensorFlow/Keras, CNNs, NLP, and computer vision.",
+    skillsAcquired: ["TensorFlow", "Keras", "Convolutional Neural Networks", "Computer Vision"],
     imagePlaceholderLabel: "[REPLACE REQUIRED — DICODING DEEP LEARNING CERTIFICATE IMAGE]",
-    credentialUrlPlaceholder: "[ADD CERTIFICATE CREDENTIAL URL]",
+  },
+  {
+    id: "ccna-srwe",
+    image: "/images/certificates/ccna-srwe.jpg",
+    title: "CCNA: Switching, Routing, and Wireless Essentials",
+    issuer: "Cisco Networking Academy",
+    date: "February 2026",
+    category: "certification",
+    badge: "Cisco Academy",
+    featured: true,
+    aspectRatio: "landscape",
+    description:
+      "Enterprise networking certification covering OSPF, VLANs, STP, WLANs, and Layer 2 security configurations.",
+    skillsAcquired: ["OSPF Routing", "VLANs & Trunking", "STP", "WLANs"],
+    imagePlaceholderLabel: "[REPLACE REQUIRED — CISCO CCNA SRWE CERTIFICATE IMAGE]",
   },
   {
     id: "dicoding-machine-learning",
+    image: "/images/certificates/dicoding-machine-learning.jpg",
     title: "Belajar Machine Learning untuk Pemula",
     issuer: "Dicoding Indonesia",
     date: "October 2026",
     category: "certification",
     hours: "90 Learning Hours",
     badge: "90 Hours",
+    featured: false,
+    aspectRatio: "landscape",
     description:
-      "Mastered foundational machine learning paradigms covering supervised and unsupervised learning, regression, classification algorithms, clustering, feature engineering, and model evaluation metrics.",
-    skillsAcquired: ["Supervised Learning", "Unsupervised Learning", "Feature Engineering", "Model Optimization"],
+      "Foundational training covering supervised and unsupervised learning, regression, classification, and model optimization.",
+    skillsAcquired: ["Supervised Learning", "Classification", "Feature Engineering"],
     imagePlaceholderLabel: "[REPLACE REQUIRED — DICODING MACHINE LEARNING CERTIFICATE IMAGE]",
-    credentialUrlPlaceholder: "[ADD CERTIFICATE CREDENTIAL URL]",
-  },
-  {
-    id: "ccna-srwe",
-    title: "CCNA: Switching, Routing, and Wireless Essentials",
-    issuer: "Cisco Networking Academy",
-    date: "February 2026",
-    category: "certification",
-    badge: "Cisco Academy",
-    description:
-      "Completed advanced enterprise networking training covering network switching, routing protocols, and wireless infrastructure.",
-    skillsAcquired: ["OSPF", "VLANs & Trunking", "STP", "WLANs", "EtherChannel", "FHRP", "Layer 2 Security"],
-    imagePlaceholderLabel: "[REPLACE REQUIRED — CISCO CCNA SRWE CERTIFICATE IMAGE]",
-    credentialUrlPlaceholder: "[ADD CISCO BADGE URL]",
   },
   {
     id: "ccna-itn",
+    image: "/images/certificates/ccna-itn.jpg",
     title: "CCNA: Introduction to Networks",
     issuer: "Cisco Networking Academy",
     date: "June 2025",
     category: "certification",
     badge: "Cisco Academy",
+    featured: false,
+    aspectRatio: "landscape",
     description:
-      "Foundational networking qualification covering IPv4 and IPv6 network addressing, subnet calculation, Ethernet protocols, and hands-on router/switch CLI configurations through 50+ Cisco Packet Tracer lab simulations.",
-    skillsAcquired: ["IPv4 / IPv6 Subnetting", "Packet Tracer", "Router & Switch Config", "Network Topologies"],
+      "Foundational networking qualification covering IPv4/IPv6 addressing, subnetting, and hands-on router CLI configurations.",
+    skillsAcquired: ["IPv4 / IPv6 Subnetting", "Packet Tracer", "Router Configuration"],
     imagePlaceholderLabel: "[REPLACE REQUIRED — CISCO CCNA ITN CERTIFICATE IMAGE]",
-    credentialUrlPlaceholder: "[ADD CISCO BADGE URL]",
   },
   {
     id: "pramuka-garuda",
+    image: "/images/certificates/pramuka-garuda.jpg",
     title: "Pramuka Garuda Award (Penegak Rank)",
-    issuer: "Gerakan Pramuka Kwartir Cabang Kabupaten Bogor",
+    issuer: "Gerakan Pramuka Kwarcab Bogor",
     date: "March 2022",
     category: "honor",
-    badge: "Highest Scout Honor",
+    badge: "Scout Honor",
+    featured: false,
+    aspectRatio: "portrait",
     description:
-      "Awarded the highest national achievement rank in Indonesian Scouting (Penegak Rank) by Kwarcab Kabupaten Bogor in recognition of leadership, personal integrity, community service, and civic excellence.",
-    skillsAcquired: ["Integrity & Discipline", "Community Leadership", "Survival & Team Problem Solving"],
+      "Highest achievement rank in Indonesian Scouting (Penegak Rank) in recognition of leadership, personal integrity, and community service.",
+    skillsAcquired: ["Integrity", "Community Service", "Team Governance"],
     imagePlaceholderLabel: "[REPLACE REQUIRED — PRAMUKA GARUDA MEDAL & CERTIFICATE IMAGE]",
   },
   {
     id: "commendation-regent-bogor",
+    image: "/images/certificates/paskibraka.jpg",
     title: "Official Commendation — Regent of Bogor",
-    issuer: "Regional Government & Youth and Sports Agency (Dispora) Bogor",
+    issuer: "Dispora & Regional Government of Bogor",
     date: "August 2021",
     category: "honor",
     badge: "Regent Commendation",
+    featured: false,
+    aspectRatio: "portrait",
     description:
-      "Awarded official commendation by the Regent of Bogor for exceptional discipline, leadership, and ceremonial execution as a core Flag Hoister (Pengerek Bendera) in PASKIBRAKA Kabupaten Bogor.",
-    skillsAcquired: ["Civic Duty", "Flawless Execution", "High-Pressure Composure"],
+      "Awarded official commendation by the Regent of Bogor for ceremonial execution as core Flag Hoister in PASKIBRAKA.",
+    skillsAcquired: ["Ceremonial Precision", "High-Pressure Composure"],
     imagePlaceholderLabel: "[REPLACE REQUIRED — REGENT OF BOGOR OFFICIAL COMMENDATION CERTIFICATE IMAGE]",
   },
 ];
-

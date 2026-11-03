@@ -2,7 +2,6 @@ import React, { lazy, Suspense } from "react";
 import { ArrowUpRight, Sparkles, Terminal } from "lucide-react";
 import { profileData } from "../../data/profile";
 import { FallbackGraphic } from "../../three/FallbackGraphic";
-import { PlaceholderMedia } from "../ui/PlaceholderMedia";
 import { Button } from "../ui/Button";
 import { TextReveal } from "../animations/TextReveal";
 import { Magnetic } from "../animations/Magnetic";
@@ -33,7 +32,7 @@ export const HeroSection: React.FC = () => {
 
             {/* Name & Title */}
             <div>
-              <p className="font-mono text-xs sm:text-sm text-[#C6D4E8]/70 tracking-widest uppercase mb-1">
+              <p className="font-mono text-xs sm:text-sm text-[#C6D4E8] tracking-widest uppercase mb-1">
                 PORTFOLIO OF
               </p>
               <h2 className="font-headline text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#F1F3F7]">
@@ -54,21 +53,26 @@ export const HeroSection: React.FC = () => {
             </div>
 
             {/* Short Description */}
-            <p className="text-base sm:text-lg text-[#C6D4E8]/80 max-w-xl leading-relaxed pt-2">
+            <p className="text-base sm:text-lg text-[#C6D4E8] max-w-xl leading-relaxed pt-2">
               {profileData.shortDescription}
             </p>
 
-            {/* Key Stat Badges */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-3">
+            {/* 3 Meaningful, Verified Professional Statistics */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-3">
               {profileData.metrics.map((m, idx) => (
                 <div
                   key={idx}
-                  className="p-3 rounded-xl bg-[#11141C]/60 border border-[#202A3B]/60 backdrop-blur-sm"
+                  className="p-4 rounded-xl bg-[#11141C]/90 border border-[#202A3B] backdrop-blur-sm hover:border-[#8AB4FF]/50 transition-colors shadow-sm"
                 >
-                  <div className="font-headline text-xl sm:text-2xl font-bold text-[#8AB4FF]">
+                  <div className="font-headline text-2xl font-bold text-[#8AB4FF]">
                     {m.value}
                   </div>
-                  <div className="font-mono text-[11px] text-[#C6D4E8]/70 truncate">{m.label}</div>
+                  <div className="font-mono text-xs font-semibold text-[#F1F3F7] mt-1">
+                    {m.label}
+                  </div>
+                  <div className="font-mono text-[11px] text-[#C6D4E8]/80 mt-0.5 line-clamp-1">
+                    {m.context}
+                  </div>
                 </div>
               ))}
             </div>
@@ -99,7 +103,7 @@ export const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Prominent Portrait + Integrated 3D Interactive Element */}
+          {/* Right Column: Prominent Portrait Frame + Integrated 3D Interactive Scene */}
           <div className="lg:col-span-5 relative flex items-center justify-center">
             <div className="relative w-full max-w-md aspect-[4/5] rounded-2xl overflow-hidden p-1 bg-gradient-to-b from-[#8AB4FF]/20 via-[#202A3B]/40 to-transparent">
               <div className="relative w-full h-full rounded-2xl overflow-hidden bg-[#11141C] border border-[#202A3B]">
@@ -115,22 +119,21 @@ export const HeroSection: React.FC = () => {
                   {/* Top Status */}
                   <div className="flex items-center justify-between">
                     <span className="font-mono text-[10px] text-[#8AB4FF] px-2.5 py-1 rounded bg-[#08090D]/80 border border-[#202A3B] backdrop-blur-sm">
-                      SYS://PORTRAIT_CANVAS
+                      PROFILE / SOFTWARE ENGINEER
                     </span>
                     <span className="font-mono text-[10px] text-[#65C9AE] px-2.5 py-1 rounded bg-[#08090D]/80 border border-[#202A3B] backdrop-blur-sm">
-                      ACTIVE
+                      OPEN TO OPPORTUNITIES
                     </span>
                   </div>
 
-                  {/* Centered Designed Placeholder Card */}
-                  <div className="my-auto pointer-events-auto">
-                    <PlaceholderMedia
-                      label="[REPLACE REQUIRED — PROFESSIONAL PORTRAIT]"
-                      expectedPath="/public/images/profile/naqib-zuhair.jpg"
-                      aspectRatio="3/4"
-                      type="photo"
-                      priority="required"
-                      className="bg-[#08090D]/80 backdrop-blur-md shadow-2xl border-[#8AB4FF]/40"
+                  {/* Professional Portrait */}
+                  <div className="my-4 flex-1 min-h-0 pointer-events-auto overflow-hidden rounded-xl border border-[#8AB4FF]/40 shadow-2xl">
+                    <img
+                      src="/images/profile/naqib-zuhair.jpg"
+                      alt="Naqib Zuhair Al-Hudri - Software Engineer"
+                      className="w-full h-full object-cover object-[center_20%]"
+                      loading="eager"
+                      fetchPriority="high"
                     />
                   </div>
 
@@ -142,7 +145,7 @@ export const HeroSection: React.FC = () => {
                         Naqib Zuhair Al-Hudri
                       </span>
                     </div>
-                    <span className="font-mono text-[10px] text-[#C6D4E8]/60">PNJ &middot; D4 TI</span>
+                    <span className="font-mono text-[10px] text-[#C6D4E8]">PNJ &middot; D4 TI</span>
                   </div>
                 </div>
               </div>
@@ -158,7 +161,7 @@ export const HeroSection: React.FC = () => {
         <div className="mt-16 flex justify-center">
           <a
             href="#about"
-            className="group flex flex-col items-center gap-2 text-[#C6D4E8]/60 hover:text-[#8AB4FF] transition-colors focus:outline-none"
+            className="group flex flex-col items-center gap-2 text-[#C6D4E8]/80 hover:text-[#8AB4FF] transition-colors focus:outline-none"
             aria-label="Scroll to About Section"
           >
             <span className="font-mono text-[11px] uppercase tracking-widest">Scroll to Explore</span>

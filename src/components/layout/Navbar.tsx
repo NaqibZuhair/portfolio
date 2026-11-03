@@ -35,12 +35,15 @@ export const Navbar: React.FC = () => {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-40 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-40 transition-all duration-300 border-t-0",
         scrolled
-          ? "bg-[#08090D]/85 backdrop-blur-md border-b border-[#202A3B]/80 py-3 shadow-lg"
-          : "bg-transparent py-5"
+          ? "bg-[#08090D]/90 backdrop-blur-md border-b border-[#202A3B] py-3 shadow-[0_4px_20px_-4px_rgba(8,9,13,0.8)]"
+          : "bg-transparent py-5 border-b border-transparent"
       )}
     >
+      {/* Top subtle blue accent theme highlight */}
+      <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#8AB4FF]/50 to-transparent pointer-events-none" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Monogram Brand */}
         <Link
@@ -55,19 +58,19 @@ export const Navbar: React.FC = () => {
             <span className="font-headline text-sm font-bold tracking-tight text-[#F1F3F7] group-hover:text-[#8AB4FF] transition-colors">
               NAQIB ZUHAIR
             </span>
-            <span className="text-[10px] text-[#C6D4E8]/60 font-mono tracking-wider uppercase">
+            <span className="text-[10px] text-[#C6D4E8] font-mono tracking-wider uppercase">
               Software Engineer
             </span>
           </div>
         </Link>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-1 bg-[#11141C]/60 border border-[#202A3B] rounded-full px-4 py-1.5 backdrop-blur-sm">
+        <nav className="hidden lg:flex items-center gap-1 bg-[#11141C]/80 border border-[#202A3B] rounded-full px-4 py-1.5 backdrop-blur-sm">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="px-3 py-1 text-xs font-mono text-[#C6D4E8] hover:text-[#8AB4FF] hover:bg-[#202A3B]/40 rounded-full transition-all"
+              className="px-3 py-1 text-xs font-mono text-[#C6D4E8] hover:text-[#8AB4FF] hover:bg-[#202A3B]/50 rounded-full transition-all"
             >
               {link.label}
             </a>
@@ -81,7 +84,7 @@ export const Navbar: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             download="Naqib_Zuhair_CV.pdf"
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-mono font-medium text-[#C6D4E8] hover:text-[#F1F3F7] bg-[#11141C] border border-[#202A3B] rounded-lg hover:border-[#8AB4FF]/40 transition-colors"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-mono font-medium text-[#C6D4E8] hover:text-[#F1F3F7] bg-[#11141C] border border-[#202A3B] rounded-lg hover:border-[#8AB4FF]/50 transition-colors"
           >
             <FileText className="w-3.5 h-3.5 text-[#8AB4FF]" />
             <span>CV</span>
@@ -145,4 +148,3 @@ export const Navbar: React.FC = () => {
     </header>
   );
 };
-

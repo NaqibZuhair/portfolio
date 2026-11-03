@@ -1,28 +1,29 @@
 import React from "react";
-import { Mic, Megaphone, Crown, ShieldCheck, Sparkles, Check } from "lucide-react";
-import { beyondTechPillars } from "../../data/beyondTech";
+import { Mic, Megaphone, Crown, ShieldCheck, Sparkles, Camera } from "lucide-react";
+import { beyondTechGallery, type VisualStoryItem } from "../../data/beyondTech";
 import { PlaceholderMedia } from "../ui/PlaceholderMedia";
 import { Card } from "../ui/Card";
+import { Badge } from "../ui/Badge";
 import { ScrollReveal } from "../animations/ScrollReveal";
 
 export const BeyondTechSection: React.FC = () => {
   const getIcon = (id: string) => {
     switch (id) {
-      case "master-of-ceremonies":
-        return <Mic className="w-5 h-5 text-[#8AB4FF]" />;
-      case "diplomacy-representation":
-        return <Crown className="w-5 h-5 text-[#8266B5]" />;
-      case "event-production-vip":
-        return <Megaphone className="w-5 h-5 text-[#65C9AE]" />;
-      case "ceremonial-discipline":
-        return <ShieldCheck className="w-5 h-5 text-[#8AB4FF]" />;
+      case "mc-fdpni":
+        return <Mic className="w-4 h-4 text-[#8AB4FF]" />;
+      case "ambassador-delegation":
+        return <Crown className="w-4 h-4 text-[#8266B5]" />;
+      case "grand-final-protocol":
+        return <Megaphone className="w-4 h-4 text-[#65C9AE]" />;
+      case "mc-open-house-pnj":
+        return <Mic className="w-4 h-4 text-[#8AB4FF]" />;
       default:
-        return <Sparkles className="w-5 h-5 text-[#8AB4FF]" />;
+        return <Sparkles className="w-4 h-4 text-[#8AB4FF]" />;
     }
   };
 
   return (
-    <section id="beyond-tech" className="py-24 relative border-t border-[#202A3B]/60 bg-[#08090D]">
+    <section id="beyond-tech" className="py-24 relative border-t border-[#202A3B]/60 bg-[#08090D] scroll-mt-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <ScrollReveal>
@@ -33,73 +34,59 @@ export const BeyondTechSection: React.FC = () => {
             <h2 className="font-headline text-3xl sm:text-4xl lg:text-5xl font-bold text-[#F1F3F7]">
               Technology is what I build. Communication is how I connect.
             </h2>
-            <p className="text-sm sm:text-base text-[#C6D4E8]/70 font-mono">
-              The human dimension: public speaking, high-stakes protocol, diplomacy, and ceremonial discipline.
+            <p className="text-sm sm:text-base text-[#C6D4E8] font-mono">
+              Visual documentation: public speaking, stage protocol, diplomacy, and ceremonial discipline.
             </p>
           </div>
         </ScrollReveal>
 
-        {/* Editorial Storytelling Grid */}
+        {/* Visual Storytelling Gallery Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {beyondTechPillars.map((pillar, idx) => (
-            <ScrollReveal key={pillar.id} delay={idx * 0.1}>
-              <Card interactive className="p-6 sm:p-8 border-[#202A3B] flex flex-col justify-between h-full">
-                <div className="space-y-5">
-                  {/* Top pillar header */}
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="flex items-center gap-3">
-                      <div className="p-3 rounded-xl bg-[#08090D] border border-[#202A3B]">
-                        {getIcon(pillar.id)}
-                      </div>
-                      <div>
-                        <h3 className="font-headline text-xl font-bold text-[#F1F3F7]">
-                          {pillar.title}
-                        </h3>
-                        <p className="font-mono text-xs text-[#8AB4FF] mt-0.5">{pillar.subtitle}</p>
-                      </div>
-                    </div>
-
-                    <div className="text-right shrink-0">
-                      <span className="font-headline text-2xl font-bold text-[#65C9AE]">
-                        {pillar.metric}
-                      </span>
-                      <p className="font-mono text-[10px] text-[#C6D4E8]/50">
-                        {pillar.metricLabel}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Visual placeholder for event/stage photo */}
-                  <PlaceholderMedia
-                    label={pillar.imagePlaceholderLabel}
-                    expectedPath={`/public/images/leadership/${pillar.id}.jpg`}
-                    aspectRatio="16/9"
-                    type="photo"
-                    priority="required"
-                  />
-
-                  {/* Narrative paragraph */}
-                  <p className="text-sm text-[#C6D4E8]/80 leading-relaxed font-sans">
-                    {pillar.description}
-                  </p>
-
-                  {/* Highlights */}
-                  <div className="space-y-2 pt-2 border-t border-[#202A3B]/60">
-                    <div className="font-mono text-[11px] text-[#C6D4E8]/60 uppercase tracking-wider">
-                      Notable Milestones:
-                    </div>
-                    {pillar.highlights.map((h, i) => (
-                      <div key={i} className="flex items-start gap-2 text-xs font-mono text-[#C6D4E8]/80">
-                        <Check className="w-3.5 h-3.5 text-[#65C9AE] shrink-0 mt-0.5" />
-                        <span>{h}</span>
-                      </div>
-                    ))}
+          {beyondTechGallery.map((item: VisualStoryItem, idx: number) => (
+            <ScrollReveal key={item.id} delay={idx * 0.08}>
+              <Card
+                interactive
+                className="overflow-hidden border-[#202A3B] hover:border-[#8AB4FF]/50 transition-all flex flex-col justify-between group"
+              >
+                {/* Visual Photograph Frame: Preserving 16/9 Original Aspect Ratio */}
+                <div className="p-3.5 bg-[#08090D]/60">
+                  <div className="aspect-video overflow-hidden rounded-xl bg-[#11141C]">
+                    <img
+                      src={item.expectedPath}
+                      alt={`${item.title} — ${item.event}`}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                    />
                   </div>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-[#202A3B]/40 flex items-center justify-between text-[11px] font-mono text-[#C6D4E8]/50">
-                  <span>Authentic Track Record</span>
-                  <span className="text-[#8AB4FF]">Verified Leadership</span>
+                {/* Editorial Caption Bar */}
+                <div className="p-6 space-y-3">
+                  <div className="flex items-center justify-between gap-2">
+                    <div className="flex items-center gap-2.5">
+                      <div className="p-1.5 rounded-md bg-[#08090D] border border-[#202A3B]">
+                        {getIcon(item.id)}
+                      </div>
+                      <span className="font-headline font-semibold text-base text-[#F1F3F7]">
+                        {item.title}
+                      </span>
+                    </div>
+                    <Badge variant="electric" size="sm">
+                      {item.tag}
+                    </Badge>
+                  </div>
+
+                  <p className="text-xs sm:text-sm text-[#C6D4E8] leading-relaxed font-sans">
+                    {item.caption}
+                  </p>
+
+                  <div className="pt-2 border-t border-[#202A3B]/60 flex items-center justify-between text-[11px] font-mono text-[#C6D4E8]">
+                    <span className="flex items-center gap-1.5 text-[#8AB4FF]">
+                      <Camera className="w-3.5 h-3.5" />
+                      {item.event}
+                    </span>
+                    <span className="text-[#65C9AE]">Event Documentation</span>
+                  </div>
                 </div>
               </Card>
             </ScrollReveal>
