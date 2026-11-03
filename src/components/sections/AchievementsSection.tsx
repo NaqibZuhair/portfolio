@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ExternalLink, Calendar, Eye, ChevronDown, ChevronUp, Award } from "lucide-react";
+import { ExternalLink, Calendar, Eye, ChevronDown, ChevronUp } from "lucide-react";
 import { achievementsData, type AchievementItem } from "../../data/achievements";
 import { Card } from "../ui/Card";
 import { Badge } from "../ui/Badge";

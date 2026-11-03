@@ -1,6 +1,6 @@
 import React from "react";
 // import { Link } from "react-router-dom";
-import { ArrowUpRight, ExternalLink, Calendar, Cpu } from "lucide-react";
+import { ExternalLink, Calendar, Cpu } from "lucide-react";
 import { projectsData } from "../../data/projects";
 import { PlaceholderMedia } from "../ui/PlaceholderMedia";
 import { Card } from "../ui/Card";

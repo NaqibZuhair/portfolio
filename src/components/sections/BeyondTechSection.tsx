@@ -1,7 +1,7 @@
 import React from "react";
-import { Mic, Megaphone, Crown, ShieldCheck, Sparkles, Camera } from "lucide-react";
+import { Mic, Megaphone, Crown, Sparkles, Camera } from "lucide-react";
 import { beyondTechGallery, type VisualStoryItem } from "../../data/beyondTech";
-import { PlaceholderMedia } from "../ui/PlaceholderMedia";
+// import { PlaceholderMedia } from "../ui/PlaceholderMedia";
 import { Card } from "../ui/Card";
 import { Badge } from "../ui/Badge";
 import { ScrollReveal } from "../animations/ScrollReveal";
